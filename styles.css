@@ -13,20 +13,20 @@ body {
 }
 
 header {
-  background-color: #003366;
+  background-color: #990000; /* vermelho Milan */
   color: white;
   text-align: center;
   padding: 30px 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 main {
   max-width: 800px;
   margin: 30px auto;
-  padding: 0 20px;
+  padding: 20px;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 img {
@@ -35,16 +35,20 @@ img {
   display: block;
   margin: 20px auto;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-h1, h2 {
-  color: #003366;
+h1, h2, h3 {
+  color: #990000; /* vermelho Milan */
   margin-bottom: 10px;
 }
 
 h2 {
   margin-top: 40px;
+}
+
+h3 {
+  margin-top: 30px;
 }
 
 ul {
@@ -63,7 +67,8 @@ p {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #003366;
+  background-color: #990000; /* vermelho Milan */
   color: white;
   margin-top: 40px;
+  font-size: 0.9rem;
 }
