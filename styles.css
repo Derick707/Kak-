@@ -1,31 +1,27 @@
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: Arial, sans-serif;
   background-color: #111;
-  color: #fff;
+  color: #eee;
+  line-height: 1.6;
 }
 
 nav {
-  background-color: #a00000;
+  background-color: #c00000;
   padding: 1rem;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-nav .logo-topo {
-  height: 50px;
 }
 
 nav ul {
   list-style: none;
-  padding: 0;
   display: flex;
+  justify-content: center;
   gap: 2rem;
-  margin: 0;
 }
 
 nav a {
@@ -34,15 +30,24 @@ nav a {
   font-weight: bold;
 }
 
-header {
-  background-color: #000;
-  text-align: center;
-  padding: 2rem;
+nav a:hover {
+  text-decoration: underline;
 }
 
-header h1 {
-  color: #e60000;
-  font-size: 3rem;
+header {
+  text-align: center;
+  padding: 2rem;
+  background-color: #000;
+}
+
+header img.escudo {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  color: #c00000;
+  font-size: 2.5rem;
 }
 
 section {
@@ -52,10 +57,12 @@ section {
 }
 
 h2 {
-  border-bottom: 2px solid #a00000;
-  padding-bottom: 0.5rem;
+  color: #c00000;
   margin-bottom: 1rem;
-  color: #a00000;
+}
+
+ul {
+  padding-left: 1.5rem;
 }
 
 .imagens {
@@ -67,20 +74,19 @@ h2 {
 
 .imagens img {
   width: 250px;
-  border: 3px solid #a00000;
+  border: 2px solid #c00000;
   border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.imagens img:hover {
+  transform: scale(1.05);
 }
 
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #222;
-  margin-top: 2rem;
+  background-color: #000;
   color: #aaa;
-}
-
-.escudo {
-  display: block;
-  margin: 1rem auto;
-  width: 100px;
+  margin-top: 2rem;
 }
