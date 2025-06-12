@@ -10,27 +10,28 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #1a1a1a;
   color: #f5f5f5;
-  line-height: 1.6;
+  line-height: 1.5;
+  padding-bottom: 40px;
 }
 
 /* Navegação */
 nav {
   background-color: #a00000;
-  padding: 1rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.7);
 }
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 20px;
+  padding: 10px 0;
   flex-wrap: wrap;
 }
 
@@ -38,11 +39,12 @@ nav a {
   color: #ffcc00;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #ffffff;
+  color: #fff;
 }
 
 /* Cabeçalho */
@@ -50,60 +52,59 @@ header {
   background: linear-gradient(to right, #a00000, #ffcc00);
   color: #000;
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 40px 20px;
 }
 
 header h1 {
   font-size: 3rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
 }
 
 header p {
-  font-style: italic;
   font-size: 1.2rem;
+  font-style: italic;
 }
 
 /* Seções */
 section {
-  padding: 2.5rem 1rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
 h2 {
   color: #ffcc00;
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
   border-bottom: 2px solid #ffcc00;
-  padding-bottom: 0.5rem;
+  padding-bottom: 5px;
 }
 
 /* Lista de conquistas */
 .conquistas ul {
   list-style: none;
-  padding-left: 1rem;
+  padding-left: 20px;
 }
 
 .conquistas li::before {
   content: "⚽ ";
   color: #a00000;
+  font-weight: bold;
 }
 
 /* Galeria */
 .galeria .imagens {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 15px;
   justify-content: center;
-  margin-top: 1rem;
 }
 
 .galeria img {
-  width: 100%;
-  max-width: 280px;
-  height: auto;
+  width: 280px;
+  border-radius: 8px;
   border: 3px solid #a00000;
-  border-radius: 10px;
-  transition: transform 0.3s, border-color 0.3s;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
 }
 
 .galeria img:hover {
@@ -115,21 +116,27 @@ h2 {
 .video-container {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 20px;
+  padding: 0 20px;
 }
 
 iframe {
-  max-width: 100%;
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
   border-radius: 10px;
+  border: none;
 }
 
 /* Rodapé */
 footer {
   background-color: #111;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
   color: #999;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 60px;
+  font-size: 0.9rem;
 }
+
 
 
