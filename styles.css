@@ -1,22 +1,19 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Corpo */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #111;
-  color: #eee;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #f0f0f0;
   line-height: 1.6;
 }
 
-/* Cabeçalho */
 header {
-  background: linear-gradient(to right, #a00000, #ff3333);
-  padding: 2rem;
+  background: linear-gradient(to right, #c8102e, #900);
+  padding: 2.5rem 1rem;
   text-align: center;
   color: white;
 }
@@ -31,9 +28,8 @@ header p {
   font-style: italic;
 }
 
-/* Navegação */
 nav {
-  background-color: #222;
+  background-color: #1e1e1e;
   padding: 1rem;
   text-align: center;
 }
@@ -47,17 +43,16 @@ nav ul {
 }
 
 nav a {
-  color: #ff3333;
+  color: #e0b000;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 nav a:hover {
-  color: #fff;
+  color: #ffffff;
 }
 
-/* Seções */
 main {
   max-width: 1000px;
   margin: auto;
@@ -69,8 +64,8 @@ main {
 }
 
 .secao h2 {
-  color: #ff3333;
-  border-bottom: 2px solid #ff3333;
+  color: #c8102e;
+  border-bottom: 2px solid #c8102e;
   margin-bottom: 1rem;
   font-size: 2rem;
 }
@@ -82,17 +77,15 @@ main {
 .secao img {
   width: 100%;
   border-radius: 10px;
-  border: 3px solid #a00000;
+  border: 3px solid #900;
   margin-top: 1rem;
 }
 
-/* Lista de conquistas */
 ul {
   padding-left: 1.5rem;
   margin-bottom: 1rem;
 }
 
-/* Galeria */
 .galeria {
   display: flex;
   flex-wrap: wrap;
@@ -104,22 +97,22 @@ ul {
   width: 300px;
   height: auto;
   border-radius: 10px;
-  border: 2px solid #ff3333;
-  transition: transform 0.3s ease;
+  border: 2px solid #c8102e;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .galeria img:hover {
   transform: scale(1.05);
-  border-color: #fff;
+  border-color: #ff3b3b;
 }
 
-/* Rodapé */
 footer {
   background-color: #1a1a1a;
   color: #aaa;
   text-align: center;
   padding: 1rem;
 }
+
 
 
 
