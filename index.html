@@ -16,6 +16,7 @@
       font-family: Arial, sans-serif;
       background-color: #111;
       color: #eee;
+      line-height: 1.6;
     }
 
     nav {
@@ -23,6 +24,8 @@
       padding: 1rem;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      position: relative;
+      z-index: 1000;
     }
 
     nav ul {
@@ -37,6 +40,7 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 1.1rem;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
@@ -46,56 +50,54 @@
 
     header {
       text-align: center;
-      padding: 3rem 1rem 4rem;
+      padding: 3rem 1rem;
       background-color: #000;
       position: relative;
       overflow: hidden;
     }
 
-    /* 🔴 Brilho pulsando atrás do escudo */
+    header img.escudo {
+      width: 100px;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 10px #c00000);
+      position: relative;
+      z-index: 2;
+      animation: piscarBrilho 2s infinite alternate;
+    }
+
     header::before {
       content: "";
       position: absolute;
-      top: 50%;
+      top: 40%;
       left: 50%;
-      width: 160px;
-      height: 160px;
-      background: radial-gradient(circle, rgba(255, 0, 0, 0.7) 20%, transparent 70%);
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, #c00000 40%, transparent 80%);
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      animation: pulsarBrilho 2s infinite ease-in-out;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    @keyframes pulsarBrilho {
-      0% {
-        opacity: 0.4;
-        transform: translate(-50%, -50%) scale(1);
-      }
-      50% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1.3);
-      }
-      100% {
-        opacity: 0.4;
-        transform: translate(-50%, -50%) scale(1);
-      }
-    }
-
-    .escudo {
-      width: 100px;
-      position: relative;
+      filter: blur(20px);
+      opacity: 0.8;
+      animation: piscarBrilho 2s infinite alternate;
       z-index: 1;
-      margin-bottom: 1rem;
+    }
+
+    @keyframes piscarBrilho {
+      0% { opacity: 0.3; filter: blur(10px); }
+      100% { opacity: 1; filter: blur(25px); }
     }
 
     h1 {
       color: #c00000;
       font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      z-index: 1;
-      position: relative;
+      margin-bottom: 0.3rem;
+    }
+
+    h2 {
+      color: #c00000;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      text-align: center;
+      text-shadow: 1px 1px 2px #660000;
     }
 
     section {
@@ -104,18 +106,27 @@
       margin: auto;
     }
 
-    h2 {
-      color: #c00000;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
     ul {
       padding-left: 1.5rem;
-      font-size: 1.1rem;
-      max-width: 400px;
+      max-width: 500px;
       margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .detalhe {
+      color: #ffcccc;
+      font-style: italic;
+      animation: brilhoConquista 3s infinite alternate;
+    }
+
+    @keyframes brilhoConquista {
+      0% { opacity: 0.6; }
+      100% {
+        opacity: 1;
+        color: #fff;
+        text-shadow: 0 0 10px #c00000;
+      }
     }
 
     .imagens {
@@ -123,10 +134,12 @@
       flex-wrap: wrap;
       gap: 1rem;
       justify-content: center;
+      margin-top: 1rem;
     }
 
     .imagens figure {
       width: 250px;
+      margin: 0;
       text-align: center;
       color: #ccc;
       font-style: italic;
@@ -135,9 +148,9 @@
 
     .imagens img {
       width: 100%;
-      border-radius: 10px;
       border: 2px solid #c00000;
-      transition: transform 0.3s;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
       box-shadow: 0 0 15px #c00000a0;
     }
 
@@ -151,8 +164,9 @@
       padding: 1rem;
       background-color: #000;
       color: #aaa;
-      font-size: 0.9rem;
       margin-top: 2rem;
+      font-size: 0.9rem;
+      box-shadow: inset 0 5px 10px #330000;
     }
 
     @media (max-width: 600px) {
@@ -168,6 +182,7 @@
   </style>
 </head>
 <body>
+
   <nav>
     <ul>
       <li><a href="#historia">História</a></li>
@@ -177,7 +192,7 @@
   </nav>
 
   <header>
-    <img class="escudo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/200px-Logo_of_AC_Milan.svg.png" alt="Escudo do Milan" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/200px-Logo_of_AC_Milan.svg.png" alt="Escudo do Milan" class="escudo" />
     <h1>Kaká no Milan</h1>
     <p>A jornada do craque brasileiro no gigante italiano</p>
   </header>
@@ -192,9 +207,9 @@
   <section id="conquistas">
     <h2>Conquistas no Milan</h2>
     <ul>
-      <li>🏆 Liga dos Campeões da UEFA (2006–07)</li>
-      <li>🏆 Mundial de Clubes da FIFA (2007)</li>
-      <li>🏆 Serie A (2003–04)</li>
+      <li>🏆 Liga dos Campeões da UEFA (2006–07) — <span class="detalhe">10 gols na campanha</span></li>
+      <li>🏆 Mundial de Clubes da FIFA (2007) — <span class="detalhe">1 gol na final</span></li>
+      <li>🏆 Serie A (2003–04) — <span class="detalhe">10 gols na temporada</span></li>
       <li>✨ Bola de Ouro (2007)</li>
       <li>✨ Melhor Jogador do Mundo FIFA (2007)</li>
     </ul>
@@ -225,5 +240,6 @@
   <footer>
     <p>Site feito por Derick © Milan</p>
   </footer>
+
 </body>
 </html>
