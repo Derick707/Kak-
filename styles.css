@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -12,14 +13,15 @@ body {
   padding-top: 70px; /* Espaço para o menu fixo */
 }
 
+/* Menu de navegação fixo */
 nav {
   background-color: #c00000;
   padding: 1rem;
+  text-align: center;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
 }
 
 nav ul {
@@ -33,17 +35,21 @@ nav a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1rem;
   transition: color 0.3s;
 }
 
 nav a:hover {
-  color: #ffd700;
+  color: #ffbbbb;
+  text-decoration: underline;
 }
 
+/* Cabeçalho */
 header {
   text-align: center;
   padding: 2rem;
   background-color: #000;
+  position: relative;
 }
 
 header img.escudo {
@@ -54,23 +60,32 @@ header img.escudo {
 h1 {
   color: #c00000;
   font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
+p {
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* Seções */
 section {
   padding: 2rem;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
 }
 
 h2 {
   color: #c00000;
   margin-bottom: 1rem;
+  font-size: 1.8rem;
 }
 
 ul {
   padding-left: 1.5rem;
 }
 
+/* Galeria */
 .imagens {
   display: flex;
   flex-wrap: wrap;
@@ -79,18 +94,18 @@ ul {
 }
 
 .imagens img {
-  width: 100%;
-  max-width: 250px;
+  width: 250px;
   border: 2px solid #c00000;
   border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s;
 }
 
 .imagens img:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px #c00000;
+  opacity: 0.9;
 }
 
+/* Rodapé */
 footer {
   text-align: center;
   padding: 1rem;
