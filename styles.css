@@ -79,6 +79,7 @@ main {
   border-radius: 10px;
   border: 3px solid #900;
   margin-top: 1rem;
+  object-fit: cover;
 }
 
 ul {
@@ -95,15 +96,27 @@ ul {
 
 .galeria img {
   width: 300px;
-  height: auto;
+  height: 200px;
   border-radius: 10px;
   border: 2px solid #c8102e;
   transition: transform 0.3s ease, border-color 0.3s ease;
+  object-fit: cover;
 }
 
 .galeria img:hover {
   transform: scale(1.05);
   border-color: #ff3b3b;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+iframe {
+  max-width: 100%;
+  border-radius: 10px;
 }
 
 footer {
@@ -112,8 +125,3 @@ footer {
   text-align: center;
   padding: 1rem;
 }
-
-
-
-
-
