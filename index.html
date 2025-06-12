@@ -61,55 +61,22 @@
       border-radius: 10px;
     }
 
-    /* Escudo e luz */
+    /* Escudo com brilho lateral */
     header .escudo-container {
       position: relative;
       display: inline-block;
+      border-radius: 10px;
+      box-shadow: 0 0 20px 5px #c00000;
+      padding: 5px;
+      background-color: #000;
     }
 
     header img.escudo {
       width: 100px;
       position: relative;
       z-index: 2;
-      filter: drop-shadow(0 0 8px #c00000);
       border-radius: 10px;
-    }
-
-    /* Luz fina vermelha passando atrás do escudo */
-    .luz-piscando {
-      position: absolute;
-      top: -10%;
-      left: -30%;
-      width: 15%;
-      height: 120%;
-      background: linear-gradient(
-        120deg,
-        transparent 0%,
-        rgba(255, 0, 0, 0.9) 50%,
-        transparent 100%
-      );
-      filter: drop-shadow(0 0 10px rgba(255,0,0,0.9));
-      z-index: 1;
-      animation: luzPassando 5s linear infinite;
-      border-radius: 10px;
-    }
-
-    @keyframes luzPassando {
-      0% {
-        left: -30%;
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      90% {
-        left: 130%;
-        opacity: 1;
-      }
-      100% {
-        left: 130%;
-        opacity: 0;
-      }
+      display: block;
     }
 
     h1 {
@@ -206,7 +173,6 @@
   <header>
     <div class="escudo-container">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/200px-Logo_of_AC_Milan.svg.png" alt="Escudo do Milan" class="escudo" />
-      <div class="luz-piscando"></div>
     </div>
     <h1>Kaká no Milan</h1>
     <p>A jornada do craque brasileiro no gigante italiano</p>
