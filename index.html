@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>História do Kaká no Milan</title>
   <style>
-    /* Reset básico */
     * {
       margin: 0;
       padding: 0;
@@ -17,17 +16,13 @@
       background-color: #111;
       color: #eee;
       line-height: 1.6;
-      /* Removido padding-top, pois nav não será fixo */
     }
 
-    /* Menu no topo, mas não fixo */
     nav {
       background-color: #c00000;
       padding: 1rem;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.7);
-      position: relative; /* Não fixo mais */
-      z-index: 1000;
     }
 
     nav ul {
@@ -59,7 +54,6 @@
       overflow: visible;
     }
 
-    /* Luz piscando atrás do escudo */
     header img.escudo {
       width: 100px;
       margin-bottom: 1rem;
@@ -87,14 +81,8 @@
     }
 
     @keyframes piscaLuz {
-      0% {
-        opacity: 0.4;
-        filter: drop-shadow(0 0 8px #c00000);
-      }
-      100% {
-        opacity: 1;
-        filter: drop-shadow(0 0 18px #ff0000);
-      }
+      0% { opacity: 0.4; filter: drop-shadow(0 0 8px #c00000); }
+      100% { opacity: 1; filter: drop-shadow(0 0 18px #ff0000); }
     }
 
     h1 {
@@ -107,6 +95,14 @@
       padding: 2rem 1rem;
       max-width: 900px;
       margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    section.active {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     h2 {
@@ -125,7 +121,6 @@
       line-height: 1.5;
     }
 
-    /* Galeria */
     .imagens {
       display: flex;
       flex-wrap: wrap;
@@ -166,7 +161,6 @@
       box-shadow: inset 0 5px 10px #330000;
     }
 
-    /* Responsivo */
     @media (max-width: 600px) {
       nav ul {
         flex-direction: column;
@@ -237,5 +231,23 @@
   <footer>
     <p>Site feito por Derick © Milan</p>
   </footer>
+
+  <!-- Animação scroll com JS -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
