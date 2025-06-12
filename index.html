@@ -56,62 +56,58 @@
       position: relative;
       box-shadow: inset 0 0 30px #c00000;
       overflow: visible;
+      max-width: 400px;
+      margin: 0 auto 3rem;
+      border-radius: 10px;
     }
 
-    /* Contêiner do escudo com luz animada */
-    .escudo-wrapper {
-      display: inline-block;
+    /* Escudo e luz */
+    header .escudo-container {
       position: relative;
-      width: 100px;
-      height: 100px;
-      margin-bottom: 1rem;
-      overflow: visible;
+      display: inline-block;
     }
 
-    .escudo {
-      width: 100%;
-      height: auto;
+    header img.escudo {
+      width: 100px;
       position: relative;
       z-index: 2;
-      display: block;
-      margin: 0 auto;
+      filter: drop-shadow(0 0 8px #c00000);
+      border-radius: 10px;
     }
 
-    /* Luz vermelha passando atrás do escudo */
+    /* Luz fina vermelha passando atrás do escudo */
     .luz-piscando {
       position: absolute;
-      top: 0;
-      left: -150%; /* começa bem fora à esquerda */
-      width: 60%;
+      top: -10%;
+      left: -30%;
+      width: 15%;
       height: 120%;
       background: linear-gradient(
         120deg,
         transparent 0%,
-        rgba(255, 0, 0, 0.6) 50%,
+        rgba(255, 0, 0, 0.9) 50%,
         transparent 100%
       );
-      filter: blur(15px);
+      filter: drop-shadow(0 0 10px rgba(255,0,0,0.9));
       z-index: 1;
-      animation: luzPassando2 5s linear infinite;
+      animation: luzPassando 5s linear infinite;
+      border-radius: 10px;
     }
 
-    @keyframes luzPassando2 {
+    @keyframes luzPassando {
       0% {
-        left: -150%;
+        left: -30%;
         opacity: 0;
       }
-      20% {
+      10% {
         opacity: 1;
       }
-      50% {
-        left: 150%;
+      90% {
+        left: 130%;
         opacity: 1;
-      }
-      80% {
-        opacity: 0;
       }
       100% {
-        left: 150%;
+        left: 130%;
         opacity: 0;
       }
     }
@@ -208,7 +204,7 @@
   </nav>
 
   <header>
-    <div class="escudo-wrapper">
+    <div class="escudo-container">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/200px-Logo_of_AC_Milan.svg.png" alt="Escudo do Milan" class="escudo" />
       <div class="luz-piscando"></div>
     </div>
