@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>História do Kaká no Milan</title>
   <style>
+    /* Reset básico */
     * {
       margin: 0;
       padding: 0;
@@ -18,11 +19,14 @@
       line-height: 1.6;
     }
 
+    /* Menu no topo, não fixo */
     nav {
       background-color: #c00000;
       padding: 1rem;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      position: relative;
+      z-index: 1000;
     }
 
     nav ul {
@@ -51,44 +55,63 @@
       background-color: #000;
       position: relative;
       box-shadow: inset 0 0 30px #c00000;
-      overflow: hidden;
+      overflow: visible;
     }
 
-    header img.escudo {
+    /* Contêiner do escudo com luz animada */
+    .escudo-wrapper {
+      display: inline-block;
+      position: relative;
       width: 100px;
+      height: 100px;
       margin-bottom: 1rem;
+      overflow: visible;
+    }
+
+    .escudo {
+      width: 100%;
+      height: auto;
       position: relative;
       z-index: 2;
+      display: block;
+      margin: 0 auto;
     }
 
-    /* Luz cortando horizontal */
-    .luz-corte {
-      content: "";
+    /* Luz vermelha passando atrás do escudo */
+    .luz-piscando {
       position: absolute;
-      top: 50%;
-      left: -200px;
-      width: 200px;
-      height: 120px;
-      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
-      transform: rotate(5deg);
-      animation: cortarLuz 2.5s ease-out 1;
+      top: 0;
+      left: -150%; /* começa bem fora à esquerda */
+      width: 60%;
+      height: 120%;
+      background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255, 0, 0, 0.6) 50%,
+        transparent 100%
+      );
+      filter: blur(15px);
       z-index: 1;
-      pointer-events: none;
+      animation: luzPassando2 5s linear infinite;
     }
 
-    @keyframes cortarLuz {
+    @keyframes luzPassando2 {
       0% {
-        left: -200px;
+        left: -150%;
         opacity: 0;
       }
-      30% {
+      20% {
         opacity: 1;
       }
-      70% {
-        opacity: 0.8;
+      50% {
+        left: 150%;
+        opacity: 1;
+      }
+      80% {
+        opacity: 0;
       }
       100% {
-        left: 120%;
+        left: 150%;
         opacity: 0;
       }
     }
@@ -103,14 +126,6 @@
       padding: 2rem 1rem;
       max-width: 900px;
       margin: auto;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    section.active {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     h2 {
@@ -129,6 +144,7 @@
       line-height: 1.5;
     }
 
+    /* Galeria */
     .imagens {
       display: flex;
       flex-wrap: wrap;
@@ -169,6 +185,7 @@
       box-shadow: inset 0 5px 10px #330000;
     }
 
+    /* Responsivo */
     @media (max-width: 600px) {
       nav ul {
         flex-direction: column;
@@ -191,8 +208,10 @@
   </nav>
 
   <header>
-    <div class="luz-corte"></div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/200px-Logo_of_AC_Milan.svg.png" alt="Escudo do Milan" class="escudo" />
+    <div class="escudo-wrapper">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/200px-Logo_of_AC_Milan.svg.png" alt="Escudo do Milan" class="escudo" />
+      <div class="luz-piscando"></div>
+    </div>
     <h1>Kaká no Milan</h1>
     <p>A jornada do craque brasileiro no gigante italiano</p>
   </header>
@@ -238,25 +257,7 @@
   </section>
 
   <footer>
-    <p>Site feito por Dkrxzx © Milan</p>
+    <p>Site feito por Derick © Milan</p>
   </footer>
-
-  <!-- Scroll animation -->
-  <script>
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-  </script>
 </body>
 </html>
