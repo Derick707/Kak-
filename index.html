@@ -51,38 +51,46 @@
       background-color: #000;
       position: relative;
       box-shadow: inset 0 0 30px #c00000;
-      overflow: visible;
+      overflow: hidden;
     }
 
     header img.escudo {
       width: 100px;
       margin-bottom: 1rem;
-      filter: drop-shadow(0 0 8px #c00000);
       position: relative;
       z-index: 2;
-      animation: piscaLuz 2s infinite alternate ease-in-out;
     }
 
-    header::before {
+    /* Luz cortando horizontal */
+    .luz-corte {
       content: "";
       position: absolute;
       top: 50%;
-      left: 50%;
-      width: 140px;
-      height: 140px;
-      background: radial-gradient(circle, #c00000 30%, transparent 70%);
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      filter: blur(15px);
-      opacity: 0.8;
-      animation: piscaLuz 2s infinite alternate ease-in-out;
+      left: -200px;
+      width: 200px;
+      height: 120px;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+      transform: rotate(5deg);
+      animation: cortarLuz 2.5s ease-out 1;
       z-index: 1;
       pointer-events: none;
     }
 
-    @keyframes piscaLuz {
-      0% { opacity: 0.4; filter: drop-shadow(0 0 8px #c00000); }
-      100% { opacity: 1; filter: drop-shadow(0 0 18px #ff0000); }
+    @keyframes cortarLuz {
+      0% {
+        left: -200px;
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+      }
+      70% {
+        opacity: 0.8;
+      }
+      100% {
+        left: 120%;
+        opacity: 0;
+      }
     }
 
     h1 {
@@ -183,6 +191,7 @@
   </nav>
 
   <header>
+    <div class="luz-corte"></div>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/200px-Logo_of_AC_Milan.svg.png" alt="Escudo do Milan" class="escudo" />
     <h1>Kaká no Milan</h1>
     <p>A jornada do craque brasileiro no gigante italiano</p>
@@ -232,7 +241,7 @@
     <p>Site feito por Derick © Milan</p>
   </footer>
 
-  <!-- Animação scroll com JS -->
+  <!-- Scroll animation -->
   <script>
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(
