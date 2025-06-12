@@ -3,88 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kaká no Milan - História Completa</title>
+  <title>História de Kaká no Milan</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <nav>
     <ul>
-      <li><a href="#historia" class="nav-link">História</a></li>
-      <li><a href="#conquistas" class="nav-link">Conquistas</a></li>
-      <li><a href="#galeria" class="nav-link">Galeria</a></li>
-      <li><a href="#video" class="nav-link">Vídeo</a></li>
+      <li><a href="#historia">História</a></li>
+      <li><a href="#conquistas">Conquistas</a></li>
+      <li><a href="#galeria">Galeria</a></li>
     </ul>
   </nav>
 
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/150px-Logo_of_AC_Milan.svg.png" alt="Escudo do Milan" class="escudo" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/200px-Logo_of_AC_Milan.svg.png" alt="Escudo do Milan" class="escudo">
     <h1>Kaká no Milan</h1>
-    <p>A trajetória do craque brasileiro no clube rossonero</p>
+    <p>A jornada inesquecível do craque brasileiro no gigante italiano</p>
   </header>
 
   <main>
     <section id="historia">
       <h2>História</h2>
       <p>
-        Ricardo Izecson dos Santos Leite, o Kaká, chegou ao Milan em 2003 vindo do São Paulo FC. Rapidamente se destacou pela habilidade, visão de jogo e gols decisivos, tornando-se ídolo da torcida rossonera.
+        Kaká chegou ao Milan em 2003, vindo do São Paulo. Com técnica refinada, visão de jogo e carisma, tornou-se rapidamente um dos jogadores mais adorados pela torcida rossonera. Em 2007, liderou a equipe na conquista da Liga dos Campeões da UEFA e foi coroado o melhor jogador do mundo.
       </p>
     </section>
 
     <section id="conquistas">
       <h2>Conquistas</h2>
       <ul>
-        <li>🏆 Liga dos Campeões da UEFA (2006-07)</li>
+        <li>🏆 Liga dos Campeões da UEFA (2006–07)</li>
         <li>🏆 Mundial de Clubes da FIFA (2007)</li>
-        <li>🏆 Serie A (2003-04)</li>
+        <li>🏆 Serie A (2003–04)</li>
+        <li>🏆 Supercopa da UEFA (2003, 2007)</li>
         <li>✨ Bola de Ouro (2007)</li>
         <li>✨ Melhor Jogador do Mundo FIFA (2007)</li>
       </ul>
     </section>
 
     <section id="galeria">
-      <h2>Galeria de Imagens</h2>
+      <h2>Galeria</h2>
       <div class="imagens">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Kaká_AC_Milan_2007-09-22.jpg" alt="Kaká com a camisa do Milan" />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Kaka_AC_Milan_2007.jpg" alt="Kaká comemorando gol" />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/28/Kaká_2007.jpg" alt="Kaká no campo" />
-      </div>
-    </section>
-
-    <section id="video">
-      <h2>Vídeo - Momento de Ouro</h2>
-      <div class="video-container">
-        <iframe 
-          src="https://www.youtube.com/embed/1M_Vd8OH4tg" 
-          title="Kaká Highlights Milan" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
+        <figure>
+          <img src="8c6bb54ee136aa9a1b30c06f91282228.jpg" alt="Kaká com a Bola de Ouro">
+          <figcaption>Kaká recebendo a Bola de Ouro em 2007</figcaption>
+        </figure>
+        <figure>
+          <img src="e3ba115bf405db8228d321f3d0783fb6.jpg" alt="Kaká comemorando um gol">
+          <figcaption>Comemoração após gol pelo Milan</figcaption>
+        </figure>
+        <figure>
+          <img src="5828b79cf65633c05357cf97e2dda487.jpg" alt="Kaká no campo">
+          <figcaption>Kaká em campo com a camisa do Milan</figcaption>
+        </figure>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>Feito por Derick - Milan</p>
+    <p>Site criado por Derick &copy; 2025</p>
   </footer>
-
-  <script>
-    // Animação simples ao clicar nos links do menu
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').slice(1);
-        const targetSection = document.getElementById(targetId);
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-
-        // Animação de destaque temporário
-        targetSection.style.transition = 'background-color 0.5s ease';
-        targetSection.style.backgroundColor = '#330000';
-        setTimeout(() => {
-          targetSection.style.backgroundColor = 'transparent';
-        }, 800);
-      });
-    });
-  </script>
 </body>
 </html>
